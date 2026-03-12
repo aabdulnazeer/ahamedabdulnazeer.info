@@ -3,292 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahamed Portfolio | IT Support Specialist</title>
+    <title>Ahamed Abdul Nazeer | Senior IT Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f172a; 
-            --accent: #478eff;  
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --bg-grad-1: #e0e0e0; 
-   			--bg-grad-2: #f5f5f5;
-            --glass: rgba(255, 255, 255, 0.8);
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
-			--box-color: #d1d1d1;
+            --bg-light: #f8fafc; /* Light Greyish White */
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --accent: #4f46e5; /* Indigo Blue 
+            --accent-glow: rgba(79, 70, 229, 0.1);
+            --text-primary: #1e293b; /* Deep Slate */
+            --text-secondary: #64748b; /* Muted Blue-Grey */
+            --glass-border: rgba(0, 0, 0, 0.05);
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
 
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        body 
-		{ 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2)); 
-            color: var(--text-main); 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            overflow-x: hidden;
             line-height: 1.6;
-			position: relative;
-   			min-height: 100vh;
         }
 
+        /* --- LIGHT BACKGROUND EFFECT --- */
+        .glow-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), var(--accent-glow) 0%, transparent 60%);
+            z-index: -1;
+            pointer-events: none;
+        }
 
-        .wrapper { display: flex; min-height: 100vh; }
+        .animated-mesh {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23cbd5e1' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -2;
+        }
 
-        /* SIDEBAR NAV */
+        /* --- SIDE NAVIGATION --- */
         nav {
-            width: 90px;
-            background: var(--primary);
+            position: fixed;
+            left: 20px; top: 50%;
+            transform: translateY(-50%);
+            width: 70px;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 25px;
             padding: 30px 0;
-            position: fixed;
-            height: 100vh;
+            align-items: center;
             z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         nav a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.65rem;
-            margin-bottom: 35px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            width: 100%;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: 0.4s;
             cursor: pointer;
         }
 
-        nav a i { font-size: 1.4rem; }
-        nav a:hover, nav a.active { color: var(--accent); transform: scale(1.1); }
-
-        /* FLOATING PROFILE SECTION */
-        .profile-container {
-            width: 360px;
-            position: fixed;
-            left: 110px;
-            top: 40px;
-            bottom: 40px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+        nav a:hover, nav a.active {
+            color: var(--accent);
+            transform: scale(1.2);
         }
 
-        .profile-header {
-            height: 180px;
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+        /* --- PROFILE CARD (LIGHT) --- */
+        .profile-container {
+            position: fixed;
+            left: 120px; top: 50px; bottom: 50px;
+            width: 380px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 900;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        .profile-pic-container {
             position: relative;
+            margin-bottom: 25px;
         }
 
         .profile-pic {
-            width: 160px; height: 160px;
-            border-radius: 20px;
-            position: absolute;
-            bottom: -50px; left: 50%;
-            transform: translateX(-50%);
-            border: 6px solid white;
+            width: 170px; height: 170px;
+            border-radius: 50%;
             object-fit: cover;
-            box-shadow: var(--shadow-lg);
+            border: 8px solid #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
-        .profile-content {
-            margin-top: 65px;
-            padding: 30px;
-            text-align: center;
-            flex-grow: 1;
+        .badge {
+            background: #e0e7ff;
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
-
-        .profile-content h1 { margin: 0; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
-        .profile-content p { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-
-        .social-links { margin: 20px 0; display: flex; justify-content: center; gap: 15px; }
-        .social-links a { 
-            width: 40px; height: 40px; border-radius: 10px; background: #f1f5f9;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--primary); transition: 0.3s;
-        }
-        .social-links a:hover { background: var(--accent); color: white; }
 
         .cv-btn {
-            margin: 30px;
-            padding: 16px;
-            background: var(--primary);
-            color: white;
+            width: 100%;
+            padding: 15px;
+            background: var(--accent);
+            color: #fff;
             text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
+            border-radius: 16px;
+            font-weight: 800;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
         }
-        .cv-btn:hover { background: #000; transform: translateY(-2px); }
 
-        /* MAIN CONTENT SECTION */
+        .cv-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(79, 70, 229, 0.3);
+        }
+
+        /* --- MAIN CONTENT AREA --- */
         main {
-            margin-left: 500px;
-            width: calc(100% - 500px);
-            padding: 40px 60px;
+            margin-left: 540px;
+            padding: 50px 80px 50px 40px;
+            max-width: 1000px;
         }
 
-        /* INGA CHANGE: Initial visibility set to none */
         section {
-            display: none; 
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            padding: 50px;
-            margin-bottom: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.5);
-            box-shadow: var(--shadow-sm);
-            animation: fadeIn 0.4s ease-in-out;
+            display: none;
+            animation: fadeIn 0.6s ease-out;
         }
-
-        /* Show only about by default via CSS */
-        #about { display: block; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h2 { 
-            font-size: 1.8rem; 
-            margin-top: 0; 
-            position: relative;
-            padding-bottom: 15px;
-        }
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0; bottom: 0;
-            width: 50px; height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--text-primary);
         }
 
-        /* SKILLS GRID */
-        .skills-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
-            gap: 15px; 
-            margin-top: 20px;
-        }
-        .skill-item { 
-            background: white; 
-            padding: 15px; 
-            border-radius: 16px; 
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.85rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            border: 1px solid #f1f5f9;
+        .glass-card {
+            background: #fff;
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             transition: 0.3s;
         }
-        .skill-item:hover { transform: translateY(-5px); border-color: var(--accent); color: var(--accent); }
 
-        /* EXPERIENCE CARD */
-        .exp-card {
-            border-left: 3px solid #e2e8f0;
-            padding-left: 30px;
-            position: relative;
-            margin-bottom: 30px;
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            border-color: var(--accent);
         }
-        .exp-card::before {
-            content: '';
-            position: absolute;
-            left: -9px; top: 0;
-            width: 15px; height: 15px;
-            border-radius: 50%;
+
+        .progress-track {
+            height: 8px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
             background: var(--accent);
-            border: 3px solid white;
+            border-radius: 10px;
         }
 
-        .company-header-container {
+        @media (max-width: 1200px) {
+            nav {
+                left: 0; top: auto; bottom: 0;
+                width: 100%; height: 70px;
+                flex-direction: row; justify-content: space-around;
+                border-radius: 20px 20px 0 0; transform: none;
+            }
+            .profile-container {
+                position: relative; width: 100%; left: 0; top: 0; margin-bottom: 30px;
+            }
+            main { margin-left: 0; padding: 20px; margin-bottom: 100px; }
+        }
+.company-logo-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+.company-header-container {
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 10px;
         }
-
-        .company-logo-img {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: #fff;
-            padding: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-	
-	.institute-logo {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: #fff;
-            padding: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-
-        .job-info h3 {
-            margin: 0 !important;
-            font-size: 1.25rem;
-            color: var(--primary);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 1100px) {
-            main { margin-left: 0; width: 100%; padding: 30px; }
-            .profile-container { position: relative; width: 100%; left: 0; top: 0; margin-bottom: 30px; height: auto; }
-            .wrapper { flex-direction: column; }
-            nav { width: 100%; height: 70px; bottom: 0; top: auto; flex-direction: row; padding: 0; }
-            nav a { margin-bottom: 0; padding-top: 10px; }
-        }
-	.skill-category {
-    background: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: var(--shadow-sm);
-}
-
-.skill-bar-container {
-    margin-bottom: 15px;
-}
-
-.skill-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--text-main);
-}
-
-.progress-bg {
-    width: 100%;
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), #34d399);
-    border-radius: 10px;
-    transition: width 1s ease-in-out;
-}
-.modern-contact-item {
+	.modern-contact-item {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -311,7 +244,7 @@
 .icon-circle {
     width: 45px;
     height: 45px;
-    background: var(--primary);
+    background: var(--text-primary);
     color: var(--accent);
     border-radius: 50%;
     display: flex;
@@ -334,358 +267,223 @@
     font-size: 0.9rem;
     color: var(--primary);
 }
-
-/* Form input focus effect */
-input:focus, textarea:focus {
-    border-color: var(--accent) !important;
-}
-
-button:hover {
-    background: var(--accent) !important;
-    transform: translateY(-2px);
-}
-.typing-text {
-    color: var(--accent);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    margin: 10px auto;
-    border-right: 3px solid var(--accent);
-    
-    /* Animation: Typing (3.5s) and Blink (stops after 3.5s) */
-    animation: 
-        typing 3.5s steps(25, end) forwards,
-        blink-caret 0.75s step-end 5; /* 5 times blink pannittu stop aagum */
-    
-    /* Animation mudinja udane border hide aaga ithu help pannum */
-    animation-fill-mode: forwards;
-}
-
-/* Typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-/* Cursor blinking effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--accent) }
-    /* Animation mudiya pogum pothu border-ai mothamaa transparent panniduvom */
-    100% { border-color: transparent }
-}    
-.bg-animation 
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.box 
-{
-    position: absolute;
-    background-color: var(--box-color);
-    width: 40px;
-    height: 40px;
-    bottom: -100px; 
-    border-radius: 0px; 
-    animation: rise 10s infinite linear;
-}
-
-/* --- Boxes with Size Variation (Large to Small) --- */
-
-/* Very Large Box (~1 inch) */
-.box:nth-child(1) { left: 5%; width: 100px; height: 100px; animation-duration: 18s; opacity: 0.3; }
-
-/* Large Box */
-.box:nth-child(2) { left: 25%; width: 80px; height: 80px; animation-duration: 14s; animation-delay: 2s; }
-
-/* Medium Box */
-.box:nth-child(3) { left: 45%; width: 60px; height: 60px; animation-duration: 12s; animation-delay: 5s; }
-
-/* Small Box */
-.box:nth-child(4) { left: 65%; width: 40px; height: 40px; animation-duration: 10s; animation-delay: 1s; }
-
-/* Tiny Box */
-.box:nth-child(5) { left: 85%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 3s; }
-
-/* Extra Variety to fill gaps */
-.box:nth-child(6) { left: 15%; width: 50px; height: 50px; animation-duration: 16s; animation-delay: 7s; }
-.box:nth-child(7) { left: 40%; width: 90px; height: 90px; animation-duration: 20s; }
-.box:nth-child(8) { left: 75%; width: 35px; height: 35px; animation-duration: 11s; animation-delay: 4s; }
-.box:nth-child(9) { left: 55%; width: 75px; height: 75px; animation-duration: 15s; animation-delay: 2s; }
-.box:nth-child(10) { left: 92%; width: 20px; height: 20px; animation-duration: 9s; }
-.box:nth-child(11) { left: 10%; width: 150px; height: 150px; animation-duration: 18s; opacity: 0.3; }
-		.box:nth-child(12) { left: 30%; width: 200px; height: 200px; animation-duration: 18s; opacity: 0.5; }
-/* Animation: Keela irundhu mela */
-@keyframes rise {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.8; /* Naduvula nalla theriyum */
-    }
-    100% {
-        transform: translateY(-110vh) rotate(360deg); /* Full-ah mela poidum */
-        opacity: 0;
-    }
-}
-</style>
+   </style>
 </head>
-	<div class="bg-animation">
-    <div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-    <div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-</div>
 <body>
 
-<div class="wrapper">
-    <nav>
-        <a onclick="showSection('about')" class="nav-link active" id="link-about"><i class="fa-solid fa-circle-info"></i>ABOUT</a>
-<a onclick="showSection('experience')" class="nav-link" id="link-experience"><i class="fa-solid fa-briefcase"></i>WORKS</a>
-        <a onclick="showSection('skills')" class="nav-link" id="link-skills"><i class="fa-solid fa-gear"></i>SKILLS</a>
-        
-        <a onclick="showSection('education')" class="nav-link" id="link-education"><i class="fa-solid fa-user-graduate"></i>EDU</a>
-        <a onclick="showSection('contact')" class="nav-link" id="link-contact"><i class="fa-solid fa-address-book"></i>CONTACTS</a>
-    </nav>
+<div class="glow-overlay" id="glow"></div>
+<div class="animated-mesh"></div>
 
-    <div class="profile-container">
-        <div class="profile-header">
-            <img src="https://lh3.googleusercontent.com/a/ACg8ocLGWf6xs07Ego3-f1mq3O6QzIpVRT6v24uJkSkmcAhRA5-9lkh7=s260-c-no" alt="Ahamed" class="profile-pic">
+<nav>
+    <a onclick="showSection('about')" class="active" id="link-about"><i class="fa-solid fa-user"></i></a>
+    <a onclick="showSection('experience')" id="link-experience"><i class="fa-solid fa-briefcase"></i></a>
+    <a onclick="showSection('skills')" id="link-skills"><i class="fa-solid fa-gear"></i></a>
+    <a onclick="showSection('education')" id="link-education"><i class="fa-solid fa-graduation-cap"></i></a>
+    <a onclick="showSection('contact')" id="link-contact"><i class="fa-solid fa-envelope"></i></a>
+</nav>
+
+<div class="profile-container">
+    <div class="badge">Professional Portfolio</div>
+    <div class="profile-pic-container">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocLGWf6xs07Ego3-f1mq3O6QzIpVRT6v24uJkSkmcAhRA5-9lkh7=s260-c-no" alt="Ahamed" class="profile-pic">
+    </div>
+    <h1 style="font-size: 1.8rem; margin-bottom: 5px;">Ahamed Abdul Nazeer</h1>
+    <p style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 25px;">IT SUPPORT ENGINEER</p>
+    
+    <div style="width: 100%; text-align: left; margin-bottom: 30px; font-size: 0.95rem;">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-secondary);">
+            <i class="fa-solid fa-location-dot" style="color: var(--accent);"></i>
+            <span>Buraidha, Al-Qassim, KSA</span>
         </div>
-        <div class="profile-content">
-            <h1>Ahamed Abdul Nazeer</h1>
-            <p class="typing-text">IT Support Engineer</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ahamedabdul-nazeer-8b3844172"><i class="fa-brands fa-linkedin-in"></i></a>
-                
-            </div>
-            <div style="text-align: left; font-size: 0.85rem; color: var(--text-muted); background: #f8fafc; padding: 15px; border-radius: 12px;">
-                <div style="margin-bottom: 8px;"><i class="fa-solid fa-calendar-days" style="width: 20px;"></i> 7+ Years Experience</div>
-                <div><i class="fa-solid fa-location-dot" style="width: 20px;"></i> Buraidha, Al-Qassim, KSA</div>
-            </div>
+        <div style="display: flex; align-items: center; gap: 15px; color: var(--text-secondary);">
+            <i class="fa-solid fa-clock" style="color: var(--accent);"></i>
+            <span>7+ Years Enterprise IT</span>
         </div>
-        <a href="https://drive.usercontent.google.com/u/1/uc?id=1b9U1QIEFEymGd-iy8QKnL1tbLT2MgyHC&export=download" class="cv-btn">
-            <i class="fa-solid fa-cloud-arrow-down"></i> DOWNLOAD CV
-        </a>
     </div>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 20px;">
-                Empowering Enterprise Infrastructure through Technical Excellence & Innovation.
-            </p>
-            <p style="margin-bottom: 15px;">
-                I am a dedicated Senior IT Support Engineer with over 7 years of hands-on experience in managing and optimizing complex enterprise IT environments. My expertise lies in creating a bridge between hardware reliability and software efficiency, ensuring that business operations run seamlessly with zero downtime.
-            </p>
+    <a href="https://drive.usercontent.google.com/u/1/uc?id=1b9U1QIEFEymGd-iy8QKnL1tbLT2MgyHC&export=download" class="cv-btn">
+        <i class="fa-solid fa-cloud-arrow-down"></i> Download CV
+    </a>
+</div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
-                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid var(--accent);">
-                    <h4 style="margin: 0 0 10px 0; color: var(--primary);"><i class="fa-solid fa-server"></i> Infrastructure</h4>
-                    <p style="font-size: 0.85rem; margin: 0;">Specialist in Windows Server administration, Active Directory management, and GPO implementation to enforce high security and compliance.</p>
-                </div>
-                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid var(--accent);">
-                    <h4 style="margin: 0 0 10px 0; color: var(--primary);"><i class="fa-solid fa-code-branch"></i> Automation</h4>
-                    <p style="font-size: 0.85rem; margin: 0;">Passionate about workflow optimization using Low-Code platforms like Zoho Creator (Deluge) and Google AppSheet to digitize manual processes.</p>
-                </div>
-                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid var(--accent);">
-                    <h4 style="margin: 0 0 10px 0; color: var(--primary);"><i class="fa-solid fa-shield-halved"></i> Security</h4>
-                    <p style="font-size: 0.85rem; margin: 0;">Expert in network perimeter security using pfSense firewalls, advanced DNS configuration, and proactive endpoint protection strategies.</p>
-                </div>
+<main>
+    <section id="about" style="display: block;">
+        <h2>About Me</h2>
+        <p style="font-size: 1.2rem; color: var(--accent); margin-bottom: 20px; font-weight: 600;">Optimizing Infrastructure & Business Workflows</p>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">
+            I am a dedicated Senior IT Support Engineer with over 7 years of hands-on experience in managing and optimizing complex enterprise IT environments. My expertise lies in creating a bridge between hardware reliability and software efficiency, ensuring that business operations run seamlessly with zero downtime.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+		<div class="glass-card" style="margin-bottom: 0;">
+                <h4 style="color: var(--accent);"><i class="fa-solid fa-server"></i> Infrastructure</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Specialist in Windows Server administration, Active Directory management, and GPO implementation to enforce high security and compliance.</p>
             </div>
 
-            <p>
+            <div class="glass-card" style="margin-bottom: 0;">
+                <h4 style="color: var(--accent);"><i class="fa-solid fa-shield"></i> Security</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Expert in network perimeter security using pfSense firewalls, advanced DNS configuration, and proactive endpoint protection strategies.</p>
+            </div>
+            <div class="glass-card" style="margin-bottom: 0;">
+                <h4 style="color: var(--accent);"><i class="fa-solid fa-bolt"></i> Automation</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Passionate about workflow optimization using Low-Code platforms like Zoho Creator (Deluge) and Google AppSheet to digitize manual processes.</p>
+            </div>
+        </div>
+<br>
+ <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">
                 Throughout my career in Saudi Arabia and India, I have successfully led infrastructure upgrades, resolved critical system failures through Root Cause Analysis (RCA), and maintained high SLA standards. My goal is to leverage my technical depth to build resilient and future-ready IT ecosystems.
             </p>
-        </section>
-<section id="experience">
-            <h2>Professional Experience</h2>
-            <div class="exp-card">
-                <div class="job-header">
-                    <div class="company-header-container">
-                        <img src="https://franchisecenter.sa/sites/default/files/styles/medium/public/2020-12/JJ6XcSYEQ0z3iYUoCJIQ.png?itok=ubYCnBBo" alt="Noor Fanos" class="company-logo-img">
-                        <div class="job-info">
-                            <h3>Noor Fanos Trading Company</h3>
-                            <div style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">
-                                IT Support Engineer | Buraidha, KSA
-                            </div>
-                        </div>
-                    </div>
-                    <span style="background: #e0f2fe; color: #0369a1; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
-                        FEB 2024 – PRESENT
-                    </span>
-                </div>
-                <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-muted);">
-                    <li>Managed Windows Active Directory, Domain Controllers, and implemented GPOs.</li>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+		 <div class="company-header-container">
+		<img src="https://franchisecenter.sa/sites/default/files/styles/medium/public/2020-12/JJ6XcSYEQ0z3iYUoCJIQ.png?itok=ubYCnBBo" alt="Noor Fanos" class="company-logo-img">
+                <h3 style="color: var(--text-primary);">Noor Fanos Trading Co.</h3></div>
+                <span class="badge" style="background: #f1f5f9;">FEB 2024 - PRESENT</span>
+            </div>
+            <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Buraidha, KSA</p>
+            <ul style="padding-left: 20px; color: var(--text-secondary); font-size: 0.95rem;">
+               	    <li>Managed Windows Active Directory, Domain Controllers, and implemented GPOs.</li>
                     <li>Configured and optimized firewall settings to safeguard company data.</li>
                     <li>Resolved complex technical issues efficiently via remote screen-sharing.</li>
                     <li>Ensured 100% hardware readiness and software compliance.</li>
-                </ul>
-            </div>
+            </ul>
+        </div>
+        
+        <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+<div class="company-header-container">
+		 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9vsHCS0kwQMqVwjvG35o4sDbYs1HxXvvrvw&s" alt="Astar Mobiles" class="company-logo-img">
+                <h3 style="color: var(--text-primary);">Astar Mobiles Pvt Ltd</h3></div>
 
-            <div class="exp-card">
-                <div class="job-header">
-                    <div class="company-header-container">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9vsHCS0kwQMqVwjvG35o4sDbYs1HxXvvrvw&s" alt="Astar Mobiles" class="company-logo-img">
-                        <div class="job-info">
-                            <h3>Astar Mobiles Pvt Ltd</h3>
-                            <div style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">
-                                IT Support Engineer | Chennai, India
-                            </div>
-                        </div>
-                    </div>
-                    <span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
-                        AUG 2020 – SEP 2023
-                    </span>
-                </div>
-                <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-muted);">
+                <span class="badge" style="background: #f1f5f9;">AUG 2020 – SEP 2023</span>
+            </div>
+            <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Chennai, India</p>
+            <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-secondary);">
                     <li>Resolved hardware and software issues for high-priority computer support requests.</li>
                     <li>Conducted root cause analysis (RCA) and remote diagnostic sessions.</li>
                     <li>Collaborated with senior managers to provide strategic technical solutions.</li>
                 </ul>
-            </div>
+        </div>
+<div class="glass-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+<div class="company-header-container">
+		 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjtqM-jYGhinYKY6q5BjkyXU5f-4Y6AtGzg&s" alt="Skypro Logo" class="company-logo-img">
+                <h3 style="color: var(--text-primary);">Skypro Technologies Pvt Ltd</h3></div>
 
-            <div class="exp-card">
-                <div class="job-header">
-                    <div class="company-header-container">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjtqM-jYGhinYKY6q5BjkyXU5f-4Y6AtGzg&s" alt="Skypro Logo" class="company-logo-img">
-                        <div class="job-info">
-                            <h3>Skypro Technologies Pvt Ltd</h3>
-                            <div style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">
-                                IT Support Engineer | Bangalore, India
-                            </div>
-                        </div>
-                    </div>
-                    <span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
-                        DEC 2018 – MAR 2020
-                    </span>
-                </div>
-                <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-muted);">
+                <span class="badge" style="background: #f1f5f9;">DEC 2018 – MAR 2020</span>
+            </div>
+            <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Bangalore, India</p>
+            <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-secondary);">
                     <li>Managed high-volume ticket queues ensuring all requests met SLA requirements.</li>
                     <li>Deployed and monitored enterprise-grade antivirus for secure infrastructure.</li>
                     <li>Standardized setup and configuration of desktops and peripherals organization-wide.</li>
                 </ul>
-            </div>
-        </section>
+        </div>
 
-        <section id="skills">
-    <h2>Skills</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px;">
-        
-        <div class="skill-category">
-            <h4 style="color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 8px; margin-bottom: 15px;">
-                <i class="fa-solid fa-server"></i> Infrastructure & Admin
-            </h4>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>Active Directory & GPO</span> <span>95%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
+
+
+    </section>
+
+    <section id="skills">
+        <h2>Technical Arsenal</h2>
+        <div class="glass-card">
+            <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-server"></i> Infrastructure & Admin</h4>
+            <div style="margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Active Directory / GPO</span><span>95%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
             </div>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>Windows Server 2016/19/22</span> <span>90%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+            <div style="margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Windows Server 2016/19/22</span><span>90%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
             </div>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>Office 365 Administration</span> <span>85%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 85%;"></div></div>
+            <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Office 365 Administration</span><span>85%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
             </div>
         </div>
 
-        <div class="skill-category">
-            <h4 style="color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 8px; margin-bottom: 15px;">
-                <i class="fa-solid fa-shield-virus"></i> Networking & Security
-            </h4>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>pfSense & Firewall Config</span> <span>88%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 88%;"></div></div>
+
+	<div class="glass-card">
+            <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-shield-virus"></i> Networking & Security</h4>
+            <div style="margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>pfSense & Firewall Config</span><span>88%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 88%;"></div></div>
             </div>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>DNS/DHCP & TCP/IP</span> <span>92%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 92%;"></div></div>
+            <div style="margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>DNS/DHCP & TCP/IP</span><span>75%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
             </div>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>VPN & Remote Support</span> <span>95%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
+            <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>VPN & Remote Support</span><span>80%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
             </div>
         </div>
 
-        <div class="skill-category">
-            <h4 style="color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 8px; margin-bottom: 15px;">
-                <i class="fa-solid fa-code"></i> Low-Code & Automation
-            </h4>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>Zoho Creator (Deluge)</span> <span>85%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 85%;"></div></div>
+
+	<div class="glass-card">
+            <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-code"></i> Low-Code & Automation</h4>
+            <div style="margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Zoho Creator (Deluge)</span><span>85%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
             </div>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>Google AppSheet</span> <span>80%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 80%;"></div></div>
+            <div style="margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Google AppSheet</span><span>75%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
             </div>
-            <div class="skill-bar-container">
-                <div class="skill-label"><span>ITSM & Ticketing Systems</span> <span>90%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+            <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>ITSM & Ticketing Systems</span><span>90%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
             </div>
         </div>
 
-    </div>
-</section>
 
-            <section id="education">
-    <h2>Education</h2>
-    
-    <div class="exp-card">
-        <div class="job-header">
-            <div class="company-header-container">
-                <img src="https://www.campusoption.com/images/colleges/logos/23_01_17_060349_index.jpg" alt="2" class="institute-logo">
-                
-                <div class="job-info">
-                    <h3>BE in Electronics and Communication</h3>
-                    <div style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">
-                        MET Engineering College
-                    </div>
-                </div>
-            </div>
-            <span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        	<div class="glass-card">
+			<div class="company-header-container">
+                		<img src="https://www.campusoption.com/images/colleges/logos/23_01_17_060349_index.jpg" alt="2" class="company-logo-img">
+            <div class="job-info">
+<h3>Bachelor of Englineering in Electronics & Communication</h3>
+
+            <p style="color: var(--accent);">MET Engineering College</p>
+</div>
+</div>
+
+<span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
                 2015 - 2018
             </span>
-        </div>
-        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem; padding-left: 60px;">
+<p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem; padding-left: 60px;">
             Focused on Digital Systems, Network Infrastructure, and Communication Protocols.
         </p>
-    </div>
-
-    <div class="exp-card">
-        <div class="job-header">
-            <div class="company-header-container">
-                <img src="https://mymathews.com/media/institute_logo/Noor_Logo.jpg" alt="1" class="institute-logo">
-                
-                <div class="job-info">
-                    <h3>Diploma in Computer Science</h3>
-                    <div style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">
-                        Noorul Islam Polytechnic College
-                    </div>
-                </div>
-            </div>
-            <span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
-                2013 - 2015
-            </span>
         </div>
-        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem; padding-left: 60px;">
+        <div class="glass-card">
+			<div class="company-header-container">
+                		<img src="https://mymathews.com/media/institute_logo/Noor_Logo.jpg" alt="1" class="company-logo-img">
+            <div class="job-info">
+<h3>Diploma in Computer Science</h3>
+
+            <p style="color: var(--accent);">Noorul Islam Polytechnic College</p>
+</div>
+</div>
+
+<span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
+                2015 - 2018
+            </span>
+<p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem; padding-left: 60px;">
             Foundation in Computer Hardware, Networking, and Software Development.
         </p>
-    </div>
-</section>
+        </div>
 
-        <section id="contact">
-    <h2>Get In Touch</h2>
+    </section>
+
+    <section id="contact">
+         <h2>Get In Touch</h2>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 30px;">
         
@@ -727,27 +525,23 @@ button:hover {
         </div>
 
          </div>
-</section>
-    </main>
-</div>
+    </section>
+</main>
 
 <script>
-    function showSection(id) {
-        // Hide all sections
-        document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
-        // Show target section
-        document.getElementById(id).style.display = 'block';
-        // Update active menu link
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        document.getElementById('link-' + id).classList.add('active');
-        // Scroll to top
-        window.scrollTo(0, 0);
-    }
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', (e) => {
+        glow.style.setProperty('--x', e.clientX + 'px');
+        glow.style.setProperty('--y', e.clientY + 'px');
+    });
 
-    // INGA CHANGE: Auto load about section on refresh
-    window.onload = function() {
-        showSection('about');
-    };
+    function showSection(id) {
+        document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+        document.getElementById('link-' + id).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 </script>
 
 </body>
