@@ -114,20 +114,27 @@
 
         .profile-pic-container {
             position: relative;
-            margin-bottom: 25px;
+            display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    width: 210px;
+		    height: 210px;
+		    margin-bottom: 25px;
         }
 
 		.profile-pic-container::before 
 		{
-		    content: '';
-		    position: absolute;
-		    width: 195px; height: 195px;
-		    border-radius: 50%;
-		    border: 2px solid var(--accent);
-		    border-top-color: transparent;
-		    border-bottom-color: transparent;
-		    animation: spin 2s linear infinite;
+			    content: '';
+			    position: absolute;
+			    width: 205px; /* Size-ah adjust panniten */
+			    height: 205px;
+			    border-radius: 50%;
+			    border: 3px solid var(--accent);
+			    border-top-color: transparent;
+			    border-bottom-color: transparent;
+			    animation: spin 10s linear infinite; 
 		}
+
 		
 		@keyframes spin 
 		{
