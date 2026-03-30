@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahamed Abdul Nazeer | Senior IT Engineer</title>
+    <title>Ahamed Abdul Nazeer | IT Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -32,28 +32,23 @@
             line-height: 1.6;
         }
 
-        /* --- LIGHT BACKGROUND EFFECT --- */
-      .glow-overlay 
-		{
+        .glow-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), var(--accent-glow) 0%, transparent 60%);
             z-index: -1;
             pointer-events: none;
-			background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(79, 70, 229, 0.15) 0%, transparent 50%);
-    		transition: background 0.2s ease; 
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(79, 70, 229, 0.15) 0%, transparent 50%);
+            transition: background 0.2s ease; 
         }
-		body::before 
-		{
-   			content: "";
-		   	position: fixed;
-		    top: -50%; left: -50%;
-		    width: 200%; height: 200%;
-		    background: radial-gradient(circle, rgba(79, 70, 229, 0.03) 0%, transparent 80%);
-		    animation: moveGradient 15s ease infinite alternate;
-		    z-index: -3;
-		}
 
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.03) 0%, transparent 80%);
+            z-index: -3;
+        }
 
         .animated-mesh {
             position: fixed;
@@ -62,7 +57,6 @@
             z-index: -2;
         }
 
-        /* --- SIDE NAVIGATION --- */
         nav {
             position: fixed;
             left: 20px; top: 50%;
@@ -93,7 +87,6 @@
             transform: scale(1.2);
         }
 
-        /* --- PROFILE CARD (LIGHT) --- */
         .profile-container {
             position: fixed;
             left: 120px; top: 50px; bottom: 50px;
@@ -111,38 +104,32 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.03);
         }
 
-
         .profile-pic-container {
             position: relative;
             display: flex;
-		    align-items: center;
-		    justify-content: center;
-		    width: 210px;
-		    height: 210px;
-		    margin-bottom: 25px;
+            align-items: center;
+            justify-content: center;
+            width: 210px;
+            height: 210px;
+            margin-bottom: 25px;
         }
 
-		.profile-pic-container::before 
-		{
-			    content: '';
-			    position: absolute;
-			    width: 205px; /* Size-ah adjust panniten */
-			    height: 205px;
-			    border-radius: 50%;
-			    border: 3px solid var(--accent);
-			    border-top-color: transparent;
-			    border-bottom-color: transparent;
-			    animation: spin 10s linear infinite; 
-		}
+        .profile-pic-container::before {
+            content: '';
+            position: absolute;
+            width: 205px; 
+            height: 205px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            animation: spin 10s linear infinite; 
+        }
 
-		
-		@keyframes spin 
-		{
-   			from { transform: rotate(0deg); }
-    		to { transform: rotate(360deg); }
-		}
-
-
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
 
         .profile-pic {
             width: 200px; height: 200px;
@@ -183,7 +170,6 @@
             box-shadow: 0 15px 30px rgba(79, 70, 229, 0.3);
         }
 
-        /* --- MAIN CONTENT AREA --- */
         main {
             margin-left: 540px;
             padding: 50px 80px 50px 40px;
@@ -208,55 +194,49 @@
         }
 
         .glass-card {
-		position: relative;
+            position: relative;
             background: #fff;
-            border: 1px solid rgba(79, 70, 229, 0.1) !important;
             padding: 30px;
             border-radius: 24px;
             margin-bottom: 25px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	    overflow: hidden;
-	    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05) !important;
         }
-
 
         .glass-card:hover {
             transform: scale(1.02) translateY(-10px) !important;
             box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1) !important;
-            border-color: var(--accent);
-	    background: rgba(255, 255, 255, 1) !important;
+            border-color: var(--accent) !important;
+            background: rgba(255, 255, 255, 1) !important;
         }
 
-		h1 
-		{
-		    background: linear-gradient(90deg, #1e293b, #4f46e5, #1e293b);
-		    background-size: 200% auto;
-		    -webkit-background-clip: text;
-		    -webkit-text-fill-color: transparent;
-		    animation: shimmer 4s linear infinite;
-		}
+        h1 {
+            background: linear-gradient(90deg, #1e293b, #4f46e5, #1e293b);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
 
-@keyframes shimmer {
-    to { background-position: 200% center; }
-}
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
 
-        .progress-track 
-		{
+        .progress-track {
             height: 8px;
             background: #f1f5f9;
             border-radius: 10px;
             margin-top: 10px;
         }
 
-        .progress-fill 
-		{
+        .progress-fill {
             height: 100%;
             background: var(--accent);
             border-radius: 10px;
-			box-shadow: 0 0 10px var(--accent);
+            box-shadow: 0 0 10px var(--accent);
         }
-
 
         @media (max-width: 1200px) {
             nav {
@@ -270,475 +250,397 @@
             }
             main { margin-left: 0; padding: 20px; margin-bottom: 100px; }
         }
-.company-logo-img {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: #fff;
-            padding: 5px;
+
+        .company-logo-img {
+            width: 45px; height: 45px;
+            object-fit: contain; border-radius: 8px;
+            background: #fff; padding: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-.company-header-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
+
+        .company-header-container { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+
+        .modern-contact-item {
+            display: flex; align-items: center; gap: 15px;
+            padding: 15px; background: #f8fafc;
+            border-radius: 12px; text-decoration: none;
+            color: inherit; transition: 0.3s; border: 1px solid transparent;
         }
-	.modern-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    background: #f8fafc;
-    border-radius: 12px;
-    text-decoration: none;
-    color: inherit;
-    transition: 0.3s;
-    border: 1px solid transparent;
-}
 
-.modern-contact-item:hover:not(.no-hover) {
-    background: white;
-    border-color: var(--accent);
-    transform: translateX(10px);
-    box-shadow: var(--shadow-sm);
-}
+        .modern-contact-item:hover:not(.no-hover) {
+            background: white; border-color: var(--accent);
+            transform: translateX(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
 
-.icon-circle {
-    width: 45px;
-    height: 45px;
-    background: var(--text-primary);
-    color: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
+        .icon-circle {
+            width: 45px; height: 45px; background: var(--text-primary);
+            color: var(--accent); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; flex-shrink: 0;
+        }
 
-.modern-contact-item span {
-    display: block;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    font-weight: 700;
-}
+        .modern-contact-item span { display: block; font-size: 0.7rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700; }
+        .modern-contact-item strong { display: block; font-size: 0.9rem; color: var(--text-primary); }
 
-.modern-contact-item strong {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--primary);
-}
-		.social-links { margin: 20px 0; display: flex; justify-content: center; gap: 15px; }
-
+        .social-links { margin: 20px 0; display: flex; justify-content: center; gap: 15px; }
         .social-links a { 
-            width: 40px; 
-			height: 40px; 
-			border-radius: 10px; 
-			background: #f1f5f9;
-			border: 1px solid var(--glass-border);
-            display: flex; 
-			align-items: center; 
-			justify-content: center;
-            color: var(--primary); transition: 0.3s;
+            width: 40px; height: 40px; border-radius: 10px; 
+            background: #f1f5f9; border: 1px solid var(--glass-border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-primary); transition: 0.3s;
+        }
+        .social-links a:hover { background: var(--accent); color: white; }
+
+        .interactive-container {
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: -2; pointer-events: none;
         }
 
-        .social-links a:hover { background: var(--accent); color: white;backdrop-filter: blur(15px); }
-		#circuitCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2; /* Mesh-kku pinnadi irukkum */
-    opacity: 0.6; /* Lines romba bright-ah illama irukka */
-    pointer-events: none;
-}
-   </style>
+        .floating-node {
+            position: absolute;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(8px);
+            transition: transform 0.2s ease-out;
+            will-change: transform;
+        }
+    </style>
 </head>
-	<canvas id="circuitCanvas"></canvas>
-<div class="animated-mesh"></div>
-	<div class="glow-overlay" id="glow"></div>
 <body>
+    <div class="animated-mesh"></div>
+    <div class="glow-overlay" id="glow"></div>
+    <div id="interactive-bg" class="interactive-container"></div>
 
-<nav>
-    <a onclick="showSection('about')" class="active" id="link-about"><i class="fa-solid fa-user"></i></a>
-    <a onclick="showSection('experience')" id="link-experience"><i class="fa-solid fa-briefcase"></i></a>
-    <a onclick="showSection('skills')" id="link-skills"><i class="fa-solid fa-gear"></i></a>
-    <a onclick="showSection('education')" id="link-education"><i class="fa-solid fa-graduation-cap"></i></a>
-    <a onclick="showSection('contact')" id="link-contact"><i class="fa-solid fa-envelope"></i></a>
-</nav>
+    <nav>
+        <a onclick="showSection('about')" class="active" id="link-about"><i class="fa-solid fa-user"></i></a>
+        <a onclick="showSection('experience')" id="link-experience"><i class="fa-solid fa-briefcase"></i></a>
+        <a onclick="showSection('skills')" id="link-skills"><i class="fa-solid fa-gear"></i></a>
+        <a onclick="showSection('education')" id="link-education"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a onclick="showSection('contact')" id="link-contact"><i class="fa-solid fa-envelope"></i></a>
+    </nav>
 
-<div class="profile-container">
-    
-    <div class="profile-pic-container">
-        <img src="https://lh3.googleusercontent.com/a/ACg8ocLGWf6xs07Ego3-f1mq3O6QzIpVRT6v24uJkSkmcAhRA5-9lkh7=s260-c-no" alt="Ahamed" class="profile-pic">
+    <div class="profile-container">
+        <div class="profile-pic-container">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocLGWf6xs07Ego3-f1mq3O6QzIpVRT6v24uJkSkmcAhRA5-9lkh7=s260-c-no" alt="Ahamed" class="profile-pic">
+        </div>
+        <h1 style="font-size: 1.8rem; margin-bottom: 5px;">Ahamed Abdul Nazeer</h1>
+        <p style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 25px;">IT SUPPORT ENGINEER</p>
+        
+        <div style="width: 100%; text-align: left; margin-bottom: 30px; font-size: 0.95rem;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-secondary);">
+                <i class="fa-solid fa-location-dot" style="color: var(--accent);"></i>
+                <span>Buraidha, Al-Qassim, KSA</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px; color: var(--text-secondary);">
+                <i class="fa-solid fa-clock" style="color: var(--accent);"></i>
+                <span>7+ Years Enterprise IT</span>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/ahamed-abdul-nazeer-s-a-8b3844172"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <a href="https://drive.usercontent.google.com/u/1/uc?id=1b9U1QIEFEymGd-iy8QKnL1tbLT2MgyHC&export=download" class="cv-btn">
+            <i class="fa-solid fa-cloud-arrow-down"></i> Download CV
+        </a>
     </div>
-    <h1 style="font-size: 1.8rem; margin-bottom: 5px;">Ahamed Abdul Nazeer</h1>
-    <p style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 25px;">IT SUPPORT ENGINEER</p>
-    
-    <div style="width: 100%; text-align: left; margin-bottom: 30px; font-size: 0.95rem;">
-        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-secondary);">
-            <i class="fa-solid fa-location-dot" style="color: var(--accent);"></i>
-            <span>Buraidha, Al-Qassim, KSA</span>
-        </div>
-        <div style="display: flex; align-items: center; gap: 15px; color: var(--text-secondary);">
-            <i class="fa-solid fa-clock" style="color: var(--accent);"></i>
-            <span>7+ Years Enterprise IT</span>
-        </div>
-    </div>
-	<div class="social-links">
 
-                <a href="https://www.linkedin.com/in/ahamed-abdul-nazeer-s-a-8b3844172"><i class="fa-brands fa-linkedin-in"></i></a>
+    <main>
+        <section id="about" style="display: block;">
+            <h2>About Me</h2>
+            <p style="font-size: 1.2rem; color: var(--accent); margin-bottom: 20px; font-weight: 600;">Optimizing Infrastructure & Business Workflows</p>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">
+                I am a dedicated Senior IT Support Engineer with over 7 years of hands-on experience in managing and optimizing complex enterprise IT environments. My expertise lies in creating a bridge between hardware reliability and software efficiency, ensuring that business operations run seamlessly with zero downtime.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="glass-card" style="margin-bottom: 0;">
+                    <h4 style="color: var(--accent);"><i class="fa-solid fa-server"></i> Infrastructure</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Specialist in Windows Server administration, Active Directory management, and GPO implementation to enforce high security and compliance.</p>
+                </div>
+                <div class="glass-card" style="margin-bottom: 0;">
+                    <h4 style="color: var(--accent);"><i class="fa-solid fa-shield"></i> Security</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Expert in network perimeter security using pfSense firewalls, advanced DNS configuration, and proactive endpoint protection strategies.</p>
+                </div>
+                <div class="glass-card" style="margin-bottom: 0;">
+                    <h4 style="color: var(--accent);"><i class="fa-solid fa-bolt"></i> Automation</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Passionate about workflow optimization using Low-Code platforms like Zoho Creator (Deluge) and Google AppSheet to digitize manual processes.</p>
+                </div>
             </div>
-
-    <a href="https://drive.usercontent.google.com/u/1/uc?id=1b9U1QIEFEymGd-iy8QKnL1tbLT2MgyHC&export=download" class="cv-btn">
-        <i class="fa-solid fa-cloud-arrow-down"></i> Download CV
-    </a>
-</div>
-
-<main>
-    <section id="about" style="display: block;">
-        <h2>About Me</h2>
-        <p style="font-size: 1.2rem; color: var(--accent); margin-bottom: 20px; font-weight: 600;">Optimizing Infrastructure & Business Workflows</p>
-        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">
-            I am a dedicated Senior IT Support Engineer with over 7 years of hands-on experience in managing and optimizing complex enterprise IT environments. My expertise lies in creating a bridge between hardware reliability and software efficiency, ensuring that business operations run seamlessly with zero downtime.
-        </p>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-		<div class="glass-card" style="margin-bottom: 0;">
-                <h4 style="color: var(--accent);"><i class="fa-solid fa-server"></i> Infrastructure</h4>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">Specialist in Windows Server administration, Active Directory management, and GPO implementation to enforce high security and compliance.</p>
-            </div>
-
-            <div class="glass-card" style="margin-bottom: 0;">
-                <h4 style="color: var(--accent);"><i class="fa-solid fa-shield"></i> Security</h4>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">Expert in network perimeter security using pfSense firewalls, advanced DNS configuration, and proactive endpoint protection strategies.</p>
-            </div>
-            <div class="glass-card" style="margin-bottom: 0;">
-                <h4 style="color: var(--accent);"><i class="fa-solid fa-bolt"></i> Automation</h4>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">Passionate about workflow optimization using Low-Code platforms like Zoho Creator (Deluge) and Google AppSheet to digitize manual processes.</p>
-            </div>
-        </div>
-<br>
- <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">
+            <br>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">
                 Throughout my career in Saudi Arabia and India, I have successfully led infrastructure upgrades, resolved critical system failures through Root Cause Analysis (RCA), and maintained high SLA standards. My goal is to leverage my technical depth to build resilient and future-ready IT ecosystems.
             </p>
-    </section>
+        </section>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="glass-card">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-		 <div class="company-header-container">
-		<img src="https://franchisecenter.sa/sites/default/files/styles/medium/public/2020-12/JJ6XcSYEQ0z3iYUoCJIQ.png?itok=ubYCnBBo" alt="Noor Fanos" class="company-logo-img">
-                <h3 style="color: var(--text-primary);">Noor Fanos Trading Co.</h3></div>
-                <span class="badge" style="background: #f1f5f9;">FEB 2024 - PRESENT</span>
-            </div>
-            <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Buraidha, KSA</p>
-            <ul style="padding-left: 20px; color: var(--text-secondary); font-size: 0.95rem;">
-               	    <li>Managed Windows Active Directory, Domain Controllers, and implemented GPOs.</li>
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="glass-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                    <div class="company-header-container">
+                        <img src="https://franchisecenter.sa/sites/default/files/styles/medium/public/2020-12/JJ6XcSYEQ0z3iYUoCJIQ.png?itok=ubYCnBBo" alt="Noor Fanos" class="company-logo-img">
+                        <h3 style="color: var(--text-primary);">Noor Fanos Trading Co.</h3>
+                    </div>
+                    <span class="badge" style="background: #f1f5f9;">FEB 2024 - PRESENT</span>
+                </div>
+                <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Buraidha, KSA</p>
+                <ul style="padding-left: 20px; color: var(--text-secondary); font-size: 0.95rem;">
+                    <li>Managed Windows Active Directory, Domain Controllers, and implemented GPOs.</li>
                     <li>Configured and optimized firewall settings to safeguard company data.</li>
                     <li>Resolved complex technical issues efficiently via remote screen-sharing.</li>
                     <li>Ensured 100% hardware readiness and software compliance.</li>
-            </ul>
-        </div>
-        
-        <div class="glass-card">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-<div class="company-header-container">
-		 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9vsHCS0kwQMqVwjvG35o4sDbYs1HxXvvrvw&s" alt="Astar Mobiles" class="company-logo-img">
-                <h3 style="color: var(--text-primary);">Astar Mobiles Pvt Ltd</h3></div>
-
-                <span class="badge" style="background: #f1f5f9;">AUG 2020 – SEP 2023</span>
+                </ul>
             </div>
-            <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Chennai, India</p>
-            <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-secondary);">
+            
+            <div class="glass-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                    <div class="company-header-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9vsHCS0kwQMqVwjvG35o4sDbYs1HxXvvrvw&s" alt="Astar Mobiles" class="company-logo-img">
+                        <h3 style="color: var(--text-primary);">Astar Mobiles Pvt Ltd</h3>
+                    </div>
+                    <span class="badge" style="background: #f1f5f9;">AUG 2020 – SEP 2023</span>
+                </div>
+                <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Chennai, India</p>
+                <ul style="padding-left: 20px; color: var(--text-secondary);">
                     <li>Resolved hardware and software issues for high-priority computer support requests.</li>
                     <li>Conducted root cause analysis (RCA) and remote diagnostic sessions.</li>
                     <li>Collaborated with senior managers to provide strategic technical solutions.</li>
                 </ul>
-        </div>
-<div class="glass-card">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-<div class="company-header-container">
-		 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjtqM-jYGhinYKY6q5BjkyXU5f-4Y6AtGzg&s" alt="Skypro Logo" class="company-logo-img">
-                <h3 style="color: var(--text-primary);">Skypro Technologies Pvt Ltd</h3></div>
-
-                <span class="badge" style="background: #f1f5f9;">DEC 2018 – MAR 2020</span>
             </div>
-            <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Bangalore, India</p>
-            <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-secondary);">
+
+            <div class="glass-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                    <div class="company-header-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjtqM-jYGhinYKY6q5BjkyXU5f-4Y6AtGzg&s" alt="Skypro Logo" class="company-logo-img">
+                        <h3 style="color: var(--text-primary);">Skypro Technologies Pvt Ltd</h3>
+                    </div>
+                    <span class="badge" style="background: #f1f5f9;">DEC 2018 – MAR 2020</span>
+                </div>
+                <p style="color: var(--accent); font-weight: 600; margin-bottom: 15px;">IT Support Engineer | Bangalore, India</p>
+                <ul style="padding-left: 20px; color: var(--text-secondary);">
                     <li>Managed high-volume ticket queues ensuring all requests met SLA requirements.</li>
                     <li>Deployed and monitored enterprise-grade antivirus for secure infrastructure.</li>
                     <li>Standardized setup and configuration of desktops and peripherals organization-wide.</li>
                 </ul>
-        </div>
-
-
-
-    </section>
-
-    <section id="skills">
-        <h2>Technical Arsenal</h2>
-        <div class="glass-card">
-            <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-server"></i> Infrastructure & Admin</h4>
-            <div style="margin-bottom: 15px;">
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Active Directory / GPO</span><span>95%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
             </div>
-            <div style="margin-bottom: 15px;">
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Windows Server 2016/19/22</span><span>90%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Arsenal</h2>
+            <div class="glass-card">
+                <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-server"></i> Infrastructure & Admin</h4>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Active Directory / GPO</span><span>95%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Windows Server 2016/19/22</span><span>90%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Office 365 Administration</span><span>85%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                </div>
             </div>
-            <div>
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Office 365 Administration</span><span>85%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+
+            <div class="glass-card">
+                <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-shield-virus"></i> Networking & Security</h4>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>pfSense & Firewall Config</span><span>88%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 88%;"></div></div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>DNS/DHCP & TCP/IP</span><span>75%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>VPN & Remote Support</span><span>80%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
+                </div>
             </div>
-        </div>
 
-
-	<div class="glass-card">
-            <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-shield-virus"></i> Networking & Security</h4>
-            <div style="margin-bottom: 15px;">
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>pfSense & Firewall Config</span><span>88%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 88%;"></div></div>
+            <div class="glass-card">
+                <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-code"></i> Low-Code & Automation</h4>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Zoho Creator (Deluge)</span><span>85%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Google AppSheet</span><span>75%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>ITSM & Ticketing Systems</span><span>90%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
             </div>
-            <div style="margin-bottom: 15px;">
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>DNS/DHCP & TCP/IP</span><span>75%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
-            </div>
-            <div>
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>VPN & Remote Support</span><span>80%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
-            </div>
-        </div>
+        </section>
 
-
-	<div class="glass-card">
-            <h4 style="margin-bottom: 20px;"><i class="fa-solid fa-code"></i> Low-Code & Automation</h4>
-            <div style="margin-bottom: 15px;">
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Zoho Creator (Deluge)</span><span>85%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
-            </div>
-            <div style="margin-bottom: 15px;">
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>Google AppSheet</span><span>75%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
-            </div>
-            <div>
-                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;"><span>ITSM & Ticketing Systems</span><span>90%</span></div>
-                <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
-            </div>
-        </div>
-
-
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        	<div class="glass-card">
-			<div class="company-header-container">
-                		<img src="https://www.campusoption.com/images/colleges/logos/23_01_17_060349_index.jpg" alt="2" class="company-logo-img">
-            <div class="job-info">
-<h3>Bachelor of Engineering in Electronics & Communication</h3>
-
-            <p style="color: var(--accent);">MET Engineering College</p>
-</div>
-</div>
-
-<span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
-                2015 - 2018
-            </span>
-<p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem; padding-left: 60px;">
-            Focused on Digital Systems, Network Infrastructure, and Communication Protocols.
-        </p>
-        </div>
-        <div class="glass-card">
-			<div class="company-header-container">
-                		<img src="https://mymathews.com/media/institute_logo/Noor_Logo.jpg" alt="1" class="company-logo-img">
-            <div class="job-info">
-<h3>Diploma in Computer Science</h3>
-
-            <p style="color: var(--accent);">Noorul Islam Polytechnic College</p>
-</div>
-</div>
-
-<span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
-                2015 - 2018
-            </span>
-<p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem; padding-left: 60px;">
-            Foundation in Computer Hardware, Networking, and Software Development.
-        </p>
-        </div>
-
-    </section>
-
-    <section id="contact">
-         <h2>Get In Touch</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 30px;">
-        
-        <div>
-            
-            
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <a href="mailto:ahamedabdulnazeer96@gmail.com" class="modern-contact-item">
-                    <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
-                    <div>
-                        <span>Email Address</span>
-                        <strong>ahamedabdulnazeer96@gmail.com</strong>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="glass-card">
+                <div class="company-header-container">
+                    <img src="https://www.campusoption.com/images/colleges/logos/23_01_17_060349_index.jpg" alt="MET" class="company-logo-img">
+                    <div class="job-info">
+                        <h3>Bachelor of Engineering in Electronics & Communication</h3>
+                        <p style="color: var(--accent);">MET Engineering College</p>
                     </div>
-                </a>
-		<a href="#" class="modern-contact-item">
-                    <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
-                    <div>
-                        <span>Call Me</span>
-                        <strong>+966 552 152 442 | +91 63811 39226</strong>
+                </div>
+                <span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">2015 - 2018</span>
+                <p style="margin-top: 10px; color: var(--text-secondary); font-size: 0.9rem; padding-left: 60px;">
+                    Focused on Digital Systems, Network Infrastructure, and Communication Protocols.
+                </p>
+            </div>
+            <div class="glass-card">
+                <div class="company-header-container">
+                    <img src="https://mymathews.com/media/institute_logo/Noor_Logo.jpg" alt="Noor" class="company-logo-img">
+                    <div class="job-info">
+                        <h3>Diploma in Computer Science</h3>
+                        <p style="color: var(--accent);">Noorul Islam Polytechnic College</p>
                     </div>
-                </a>
+                </div>
+                <span style="background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">2013 - 2015</span>
+                <p style="margin-top: 10px; color: var(--text-secondary); font-size: 0.9rem; padding-left: 60px;">
+                    Foundation in Computer Hardware, Networking, and Software Development.
+                </p>
+            </div>
+        </section>
 
-                <a href="https://wa.me/966552152442" class="modern-contact-item">
-                    <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
-                    <div>
-                        <span>WhatsApp Me</span>
-                        <strong>+966 552 152 442</strong>
-                    </div>
-                </a>
-
-                <div class="modern-contact-item no-hover">
-                    <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
-                    <div>
-                        <span>Current Location</span>
-                        <strong>Buraidha, Al-Qassim, KSA</strong>
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <a href="mailto:ahamedabdulnazeer96@gmail.com" class="modern-contact-item">
+                        <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                        <div><span>Email Address</span><strong>ahamedabdulnazeer96@gmail.com</strong></div>
+                    </a>
+                    <a href="#" class="modern-contact-item">
+                        <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+                        <div><span>Call Me</span><strong>+966 552 152 442 | +91 63811 39226</strong></div>
+                    </a>
+                    <a href="https://wa.me/966552152442" class="modern-contact-item">
+                        <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div><span>WhatsApp Me</span><strong>+966 552 152 442</strong></div>
+                    </a>
+                    <div class="modern-contact-item no-hover">
+                        <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                        <div><span>Current Location</span><strong>Buraidha, Al-Qassim, KSA</strong></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-         </div>
-    </section>
-</main>
+    <script>
+        // Glow Effect
+        const glow = document.getElementById('glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.setProperty('--x', e.clientX + 'px');
+            glow.style.setProperty('--y', e.clientY + 'px');
+        });
 
-<script>
-    const glow = document.getElementById('glow');
-    document.addEventListener('mousemove', (e) => {
-        glow.style.setProperty('--x', e.clientX + 'px');
-        glow.style.setProperty('--y', e.clientY + 'px');
-    });
+        // Interactive Background Nodes
+        const bgContainer = document.getElementById('interactive-bg');
+        const nodes = [];
+        const nodeCount = 18;
 
-    function showSection(id) {
-        document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
-        document.getElementById(id).style.display = 'block';
-        document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
-        document.getElementById('link-' + id).classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-
-	const observerOptions = { threshold: 0.1 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.glass-card').forEach(card => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-    card.style.transition = "all 0.6s ease-out";
-    observer.observe(card);
-});
-    }
-	const canvas = document.getElementById('circuitCanvas');
-const ctx = canvas.getContext('2d');
-
-let particles = [];
-const particleCount = 30; // Ethana lines venumo athu
-
-function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-window.addEventListener('resize', resize);
-resize();
-
-class CircuitParticle {
-    constructor() {
-        this.reset();
-    }
-
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.speed = 1 + Math.random() * 2;
-        // PCB lines eppovum 90 degree or 45 degree-la thaan irukkum
-        this.direction = Math.random() > 0.5 ? 'horizontal' : 'vertical';
-        this.history = [];
-        this.maxHistory = 15 + Math.random() * 20;
-    }
-
-    update() {
-        this.history.push({ x: this.x, y: this.y });
-        if (this.history.length > this.maxHistory) this.history.shift();
-
-        if (this.direction === 'horizontal') {
-            this.x += this.speed;
-        } else {
-            this.y += this.speed;
-        }
-
-        // Screen-ah vittu poita reset panna
-        if (this.x > canvas.width || this.y > canvas.height) {
-            this.reset();
-        }
-
-        // Random-ah direction change panni circuit look kondu vara
-        if (Math.random() < 0.02) {
-            this.direction = this.direction === 'horizontal' ? 'vertical' : 'horizontal';
-        }
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.strokeStyle = '#4f46e5'; // Unga accent color
-        ctx.lineWidth = 1;
-        ctx.lineJoin = 'round';
-        
-        if (this.history.length > 0) {
-            ctx.moveTo(this.history[0].x, this.history[0].y);
-            for (let point of this.history) {
-                ctx.lineTo(point.x, point.y);
+        function initNodes() {
+            for (let i = 0; i < nodeCount; i++) {
+                const node = document.createElement('div');
+                node.className = 'floating-node';
+                const size = Math.random() * 150 + 50; 
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                
+                node.style.width = `${size}px`;
+                node.style.height = `${size}px`;
+                
+                bgContainer.appendChild(node);
+                nodes.push({
+                    element: node,
+                    currentX: x,
+                    currentY: y,
+                    vx: (Math.random() - 0.5) * 0.8,
+                    vy: (Math.random() - 0.5) * 0.8,
+                    size: size
+                });
             }
         }
-        ctx.stroke();
 
-        // Line-oda head-la chinna circle (Solder point mathiri)
-        ctx.fillStyle = '#4f46e5';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-        ctx.fill();
-    }
-}
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
 
-for (let i = 0; i < particleCount; i++) {
-    particles.push(new CircuitParticle());
-}
+            nodes.forEach(node => {
+                const nodeCenterX = node.currentX + node.size / 2;
+                const nodeCenterY = node.currentY + node.size / 2;
+                const dx = mouseX - nodeCenterX;
+                const dy = mouseY - nodeCenterY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const radius = 250;
 
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-        p.update();
-        p.draw();
-    });
-    requestAnimationFrame(animate);
-}
+                if (distance < radius) {
+                    const force = (radius - distance) / radius;
+                    const moveX = (dx / distance) * force * 120;
+                    const moveY = (dy / distance) * force * 120;
+                    node.element.style.transform = `translate(${-moveX}px, ${-moveY}px)`;
+                } else {
+                    node.element.style.transform = `translate(0, 0)`;
+                }
+            });
+        });
 
-animate();
-</script>
+        function animate() {
+            nodes.forEach(node => {
+                node.currentX += node.vx;
+                node.currentY += node.vy;
 
+                if (node.currentX < -node.size) node.currentX = window.innerWidth;
+                if (node.currentX > window.innerWidth) node.currentX = -node.size;
+                if (node.currentY < -node.size) node.currentY = window.innerHeight;
+                if (node.currentY > window.innerHeight) node.currentY = -node.size;
+
+                node.element.style.left = `${node.currentX}px`;
+                node.element.style.top = `${node.currentY}px`;
+            });
+            requestAnimationFrame(animate);
+        }
+
+        // Navigation and Animation
+        function showSection(id) {
+            document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
+            const target = document.getElementById(id);
+            if(target) target.style.display = 'block';
+            
+            document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+            const link = document.getElementById('link-' + id);
+            if(link) link.classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize everything
+        window.onload = () => {
+            initNodes();
+            animate();
+
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.glass-card').forEach(card => {
+                card.style.opacity = "0";
+                card.style.transform = "translateY(30px)";
+                card.style.transition = "all 0.6s ease-out";
+                observer.observe(card);
+            });
+        };
+    </script>
 </body>
 </html>
