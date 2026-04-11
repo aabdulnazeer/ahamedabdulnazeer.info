@@ -264,6 +264,28 @@
         }
 
         
+        @keyframes spin { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+
+	.company-header-container { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+	
+	.company-logo-img 
+	{
+            width: 45px; height: 45px;
+            object-fit: contain;
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+	
+
+	 .badge {
+            
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
 
     </style>
 </head>
